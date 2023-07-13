@@ -2,7 +2,6 @@ package ch.zkb.m223.controller;
 
 import java.util.List;
 
-import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -14,42 +13,42 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 
-import ch.zkb.m223.model.ApplicationUser;
+import ch.zkb.m223.model.Booking;
 import ch.zkb.m223.model.Role.Roles;
-import ch.zkb.m223.service.ApplicationUserService;
+import ch.zkb.m223.service.BookingService;
 
-@Path("users")
+@Path("bookings")
 @RolesAllowed({ Roles.ADMIN, Roles.MEMBER })
-public class ApplicationUserController {
+public class BookingController {
     @Inject
-    ApplicationUserService service;
+    BookingService service;
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public ApplicationUser create(ApplicationUser user) {
-        return service.create(user);
+    public Booking create(Booking booking) {
+        return service.create(booking);
     }
 
     @GET
-    public List<ApplicationUser> list() {
+    public List<Booking> list() {
         return service.read();
     }
 
     @GET
     @Path("{id}")
-    public ApplicationUser get(@PathParam("id") Long id) {
+    public Booking get(@PathParam("id") Long id) {
         return service.read(id);
     }
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
-    public ApplicationUser update(ApplicationUser user) {
-        return service.update(user.getId(), user);
+    public Booking update(Booking booking) {
+        return service.update(booking.getId(), booking);
     }
 
     @DELETE
     @Path("{id}")
-    public ApplicationUser delete(@PathParam("id") Long id) {
+    public Booking delete(@PathParam("id") Long id) {
         return service.delete(id);
     }
 }
