@@ -24,7 +24,7 @@ public class ApplicationUser {
     @Schema(readOnly = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
