@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +17,7 @@ import org.hibernate.annotations.FetchMode;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@Entity
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,7 +25,7 @@ public class Booking {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime data;
+    private LocalDateTime date;
 
     @Column(nullable = false)
     private boolean isHalfDay;
@@ -45,12 +47,12 @@ public class Booking {
         this.id = id;
     }
 
-    public LocalDateTime getData() {
-        return this.data;
+    public LocalDateTime getDate() {
+        return this.date;
     }
 
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setDate(LocalDateTime date) {
+        this.date = date;
     }
 
     public boolean isIsHalfDay() {

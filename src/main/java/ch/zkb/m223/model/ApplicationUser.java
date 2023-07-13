@@ -18,7 +18,7 @@ import org.hibernate.annotations.FetchMode;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-public class User {
+public class ApplicationUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = false)
@@ -36,6 +36,7 @@ public class User {
     @Column(nullable = false)
     private String lastname;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Role role;
 

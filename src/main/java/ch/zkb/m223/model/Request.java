@@ -20,7 +20,7 @@ public class Request {
 
     @ManyToOne(optional = false)
     @Fetch(FetchMode.JOIN)
-    private User user;
+    private ApplicationUser user;
 
     @ManyToOne(optional = false)
     @Fetch(FetchMode.JOIN)
@@ -37,11 +37,11 @@ public class Request {
         this.id = id;
     }
 
-    public User getUser() {
+    public ApplicationUser getUser() {
         return this.user;
     }
 
-    public void setUser(User user) {
+    public void setUser(ApplicationUser user) {
         this.user = user;
     }
 
