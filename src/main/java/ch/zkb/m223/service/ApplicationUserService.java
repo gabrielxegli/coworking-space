@@ -17,8 +17,12 @@ public class ApplicationUserService {
     private EntityManager em;
 
     @Transactional
-    public void create(ApplicationUser user) {
+    public ApplicationUser create(ApplicationUser user) {
         em.persist(user);
+
+        Optional<ApplicationUser> newUser = read(user.getEmail());
+
+        return newUser.get();
     }
 
     @Transactional

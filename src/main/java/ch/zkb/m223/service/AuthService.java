@@ -18,6 +18,8 @@ import javax.ws.rs.core.Response;
 import ch.zkb.m223.model.ApplicationUser;
 import ch.zkb.m223.model.Credentials;
 import ch.zkb.m223.model.Role;
+import ch.zkb.m223.model.Role.Roles;
+import io.quarkus.arc.impl.Sets;
 import io.smallrye.jwt.build.Jwt;
 
 @ApplicationScoped
@@ -47,15 +49,11 @@ public class AuthService {
         String pwd = user.get().getPassword();
 
         if (credentials.getPassword().equals(pwd)) {
-            Set<String> roles = new HashSet<String>();
-
-            for (int i = 0; i < Role.values().length; i++) {
-                roles.add(Role.values()[i].label);
-            }
+            Set<String> roles = new HashSet<String>(Arrays.asList(Roles.ADMIN, Roles.MEMBER));
 
             String token = Jwt
-                    .issuer("http://localhost:8080")
-                    .upn(pwd)
+                    .issuer("http://127.0.0.1:8080/")
+                    .upn(user.get().getEmail())
                     .groups(roles)
                     .expiresIn(Duration.ofHours(24))
                     .sign();

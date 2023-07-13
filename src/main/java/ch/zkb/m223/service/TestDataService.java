@@ -14,6 +14,7 @@ import ch.zkb.m223.model.Drink;
 import ch.zkb.m223.model.Request;
 import ch.zkb.m223.model.Role;
 import io.quarkus.arc.profile.IfBuildProfile;
+import io.quarkus.logging.Log;
 import io.quarkus.runtime.StartupEvent;
 
 @ApplicationScoped
@@ -24,6 +25,8 @@ public class TestDataService {
 
     @Transactional
     void setTestData(@Observes StartupEvent ev) {
+        Log.info("Adding Test Data");
+
         Drink drink1 = new Drink();
         drink1.setActive(true);
         drink1.setTitle("Drink1");
@@ -123,5 +126,7 @@ public class TestDataService {
         request4.setBooking(booking4);
         request4.setUser(user4);
         em.persist(request4);
+
+        Log.info("Finished Adding Test Data");
     }
 }
