@@ -1,4 +1,4 @@
-package ch.zli.m223;
+package ch.zkb.m223;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -10,9 +10,9 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
-import ch.zli.m223.model.Category;
-import ch.zli.m223.model.Entry;
-import ch.zli.m223.model.Tag;
+import ch.zkb.m223.model.Category;
+import ch.zkb.m223.model.Entry;
+import ch.zkb.m223.model.Tag;
 import io.quarkus.arc.profile.IfBuildProfile;
 import io.quarkus.runtime.StartupEvent;
 

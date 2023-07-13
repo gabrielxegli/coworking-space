@@ -1,4 +1,4 @@
-package ch.zli.m223;
+package ch.zkb.m223;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

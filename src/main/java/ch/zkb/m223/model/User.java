@@ -1,4 +1,4 @@
-package ch.zli.m223.model;
+package ch.zkb.m223.model;
 
 public class User {
     private Long id;

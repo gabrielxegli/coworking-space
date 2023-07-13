@@ -1,4 +1,4 @@
-package ch.zli.m223;
+package ch.zkb.m223;
 
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
@@ -24,25 +24,24 @@ public class EntryResourceTest {
   @Order(1)
   public void testIndexEndpoint() {
     given()
-      .when().get("/entries")
-      .then()
-       .statusCode(200)
-       .body("size()", is(3));
+        .when().get("/entries")
+        .then()
+        .statusCode(200)
+        .body("size()", is(3));
   }
 
   @Test
   @Order(2)
   public void testDeleteEndpoint() {
     given()
-      .when().delete("/entries/" + 1)
-      .then()
+        .when().delete("/entries/" + 1)
+        .then()
         .statusCode(204);
-    
 
     given()
-      .when().get("/entries")
-      .then()
-      .statusCode(200)
-      .body("size()", is(2));
+        .when().get("/entries")
+        .then()
+        .statusCode(200)
+        .body("size()", is(2));
   }
 }

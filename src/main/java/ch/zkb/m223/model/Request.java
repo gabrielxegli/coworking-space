@@ -1,4 +1,4 @@
-package ch.zli.m223.model;
+package ch.zkb.m223.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
