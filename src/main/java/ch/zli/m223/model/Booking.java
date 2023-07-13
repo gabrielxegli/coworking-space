@@ -1,15 +1,41 @@
 package ch.zli.m223.model;
 
 import java.time.LocalDateTime;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import org.eclipse.microprofile.openapi.annotations.media.Schema;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 public class Booking {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Schema(readOnly = false)
     private Long id;
 
+    @Column(nullable = false)
     private LocalDateTime data;
 
+    @Column(nullable = false)
     private boolean isHalfDay;
 
-    // private Drink drink;
+    @ManyToOne(optional = false)
+    @Fetch(FetchMode.JOIN)
+    private Drink drink;
+
+    @OneToMany(mappedBy = "booking")
+    @JsonIgnoreProperties("booking")
+    @Fetch(FetchMode.JOIN)
+    private Set<Request> requests;
 
     public Long getId() {
         return this.id;
@@ -35,13 +61,20 @@ public class Booking {
         this.isHalfDay = isHalfDay;
     }
 
-    /*
-     * public private getDrink() {
-     * return this.Drink;
-     * }
-     * 
-     * public void setDrink(private Drink) {
-     * this.Drink = Drink;
-     * }
-     */
+    public Drink getDrink() {
+        return this.drink;
+    }
+
+    public void setDrink(Drink drink) {
+        this.drink = drink;
+    }
+
+    public Set<Request> getRequests() {
+        return this.requests;
+    }
+
+    public void setRequests(Set<Request> requests) {
+        this.requests = requests;
+    }
+
 }

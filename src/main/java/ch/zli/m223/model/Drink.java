@@ -17,7 +17,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 public class Drink {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(readOnly = false)
@@ -58,4 +57,11 @@ public class Drink {
         this.active = active;
     }
 
+    public Set<Booking> getBookings() {
+        return this.bookings;
+    }
+
+    public void setBookings(Set<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }
