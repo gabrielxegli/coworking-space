@@ -16,6 +16,7 @@ import javax.inject.Inject;
 import javax.ws.rs.core.Response;
 
 import ch.zkb.m223.model.ApplicationUser;
+import ch.zkb.m223.model.Credentials;
 import ch.zkb.m223.model.Role;
 import io.smallrye.jwt.build.Jwt;
 
@@ -36,8 +37,8 @@ public class AuthService {
         return Response.ok().build();
     }
 
-    public Response login(String email, String password) {
-        Optional<ApplicationUser> user = userService.read(email);
+    public Response login(Credentials credentials) {
+        Optional<ApplicationUser> user = userService.read(credentials.getEmail());
 
         if (!user.isPresent()) {
             return Response.status(404, "User doesn't exist").build();
@@ -45,7 +46,7 @@ public class AuthService {
 
         String pwd = user.get().getPassword();
 
-        if (password.equals(pwd)) {
+        if (credentials.getPassword().equals(pwd)) {
             Set<String> roles = new HashSet<String>();
 
             for (int i = 0; i < Role.values().length; i++) {

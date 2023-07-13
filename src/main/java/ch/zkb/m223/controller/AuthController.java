@@ -1,9 +1,7 @@
 package ch.zkb.m223.controller;
 
 import javax.annotation.security.PermitAll;
-import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
-import javax.validation.Valid;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -23,14 +21,14 @@ public class AuthController {
     @POST
     @Path("register")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response register() {
-        return service.register(new ApplicationUser());
+    public Response register(ApplicationUser user) {
+        return service.register(user);
     }
 
     @POST
     @Path("login")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response login() {
-        return service.login("", "");
+    public Response login(Credentials credentials) {
+        return service.login(credentials);
     }
 }

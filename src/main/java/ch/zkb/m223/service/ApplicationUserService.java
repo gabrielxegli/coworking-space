@@ -17,8 +17,8 @@ public class ApplicationUserService {
     private EntityManager em;
 
     @Transactional
-    public ApplicationUser create(ApplicationUser user) {
-        return em.merge(user);
+    public void create(ApplicationUser user) {
+        em.persist(user);
     }
 
     @Transactional
@@ -28,7 +28,7 @@ public class ApplicationUserService {
 
     @Transactional
     public Optional<ApplicationUser> read(String email) {
-        TypedQuery<ApplicationUser> q = em.createQuery("FROM ApplicationUser WHERE email=" + email,
+        TypedQuery<ApplicationUser> q = em.createQuery("FROM ApplicationUser WHERE email='" + email + "'",
                 ApplicationUser.class);
 
         Optional<ApplicationUser> user = q.getResultStream().findFirst();
