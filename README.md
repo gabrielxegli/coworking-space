@@ -1,32 +1,41 @@
-# Übungsprojekt: Punch Clock
+## Coworking Space 
 
-Punch Clock ist ein Zeiterfassungssystem, welches mit Quarkus entwickelt wird.
+Dieses Projekt ist ein Management-System für Buchungen und die Benutzer eines Coworking Spaces, welches mit Quarkus entwickelt wird.
 
-## Erste Schritte
+## Projekt aufsetzen
+Stellen Sie sicher, dass die folgenden Software auf Ihrem System installiert ist:
 
-1. Erstelle eine Kopie (fork) von diesem Projekt.
-1. Stelle sicher, dass Docker installiert ist und läuft.
-1. Stelle sicher, dass Visual Studio Code und die Erweiterung Remote Container installiert ist.
-1. Klone (clone) das Projekt lokal, um damit arbeiten zu können.
-1. Öffne das Projekt mit Visual Studio Code.
-1. Öffne das Projekt im Entwicklungscontainer.
-1. Starte das Projekt mit dem Kommando `Quarkus: Debug current Quarkus Project`
-1. Probiere die Client-Applikation unter http://localhost:8080 aus.
-1. Schaue die API auf http://localhost:8080/q/swagger-ui/ an.
+- Visual Studio Code
+- Java Development Kit (JDK 17)
+- Maven (3.9.2)
 
-## Datenbank
+1. Klonen Sie dieses Repository auf Ihr lokales System mit `git clone <repository-url>`.
 
-Die Daten werden in einer PostgreSQL-Datenbank gespeichert. In der Entwicklungsumgebung wird diese in der [docker-compose-yml](./.devcontainer/docker-compose.yml) konfiguriert.
+Die Entwicklungsumgebung ist in [Development Containern](https://containers.dev/) organisiert.
 
-### Datenbankadministration
+2. Um den Dev Container zu starten, laden Sie bitte die VS Code Extension [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) herunter. Die Dienste starten dann automatisch.
 
-Über http://localhost:5050 ist PgAdmin4 erreichbar. Damit lässt sich die Datenbank komfortabel verwalten. Der Benutzername lautet `zli@example.com` und das Passwort `zli*123`. Die Verbindung zur PostgreSQL-Datenbank muss zuerst mit folgenden Daten konfiguriert werden:
- - Host name/address: `db`
- - Port: `5432`
- - Maintenance database: `postgres`
- - Username: `postgres`
- - Password: `postgres`
+## Projekt starten
 
-## Automatische Tests
+Gestartet werden kann das Projekt mit der Quarkus Visual Studio Code Extension über den
+Befehl `Quarkus: Debug Quarkus project`.
 
-Die automatischen Tests können mit `./mvnw quarkus:test` ausgeführt werden. Für die automatischen Tests wird nicht die PostgreSQL-Datenbank verwendet, sondern eine H2-Datenbank, welche sich im Arbeitsspeicher während der Ausführung befindet.
+Alternativ kann das Projekt auch direkt über Maven gestartet werden.
+
+```bash
+./mvnw quarkus:dev
+```
+
+Der Webservice ist über Port **8080** erreichbar. Alle Testfälle laufen über diesen Port.
+
+## Testdaten
+
+Die automatisch eingeführten Testdaten werden in `TestDataService.java` gefunden.\
+Die Testfälle wurden mit [Postman](https://www.postman.com/) gemacht und man findet sie unter `/Coworking.postman_collection.json`
+
+## Quellen
+
+- Vorlage für das ganze Projekt [4.2 Lösungsvorschlag](https://moodle.zli.ch/mod/resource/view.php?id=121212)
+- Um Error-Messages zu interpretieren [ChatGPT](https://https://chat.openai.com/)
+- Das Pre-Request-Script wurde von Nadim Bhatti erstellt
+- ReadMe von Alexander Benak
