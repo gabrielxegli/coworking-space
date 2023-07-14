@@ -1,3 +1,21 @@
+commit 8c68b06256d5d5abed0fd204296a1cad465eb45c
+Author: Gabriel <mail@gabriel-egli.ch>
+Date:   Fri Jul 14 14:15:20 2023 +0000
+
+    zu viel text
+
+commit a855b592c69013f635f950c909c1d7c340f9a52a
+Author: Gabriel <mail@gabriel-egli.ch>
+Date:   Fri Jul 14 14:14:48 2023 +0000
+
+    readme postman link added
+
+commit 26ceed075cac41008a811587e1823b7e3d3d0bcc
+Author: Gabriel <mail@gabriel-egli.ch>
+Date:   Fri Jul 14 14:11:59 2023 +0000
+
+    gitlog
+
 commit eab757f56e0532eafc3d31a10b8992a3c53d6cd2
 Author: Gabriel <mail@gabriel-egli.ch>
 Date:   Fri Jul 14 14:11:44 2023 +0000
