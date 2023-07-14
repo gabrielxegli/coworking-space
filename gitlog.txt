@@ -1,0 +1,77 @@
+commit 56c0a1455cca90249e4ade8cb58e23a4f1fb6b05
+Author: Gabriel <mail@gabriel-egli.ch>
+Date:   Fri Jul 14 14:04:03 2023 +0000
+
+    made new readme
+
+commit 7dbb9523417cca6b5dd22802e21b23d2d346f250
+Author: Gabriel <mail@gabriel-egli.ch>
+Date:   Fri Jul 14 14:03:56 2023 +0000
+
+    removed test
+
+commit 7def7c0f206832464c03ac8b964f2ed90831527e
+Author: Gabriel <mail@gabriel-egli.ch>
+Date:   Fri Jul 14 13:57:12 2023 +0000
+
+    small fixed
+
+commit 1be8ab9f6edde35fbe3fe8d9b7c20a4079ff3096
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 14:31:57 2023 +0000
+
+    conflict done baller
+
+commit 21baaa8361194cb712faa8a321d3c896d40ba4f6
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 14:31:29 2023 +0000
+
+    Controllers done balls
+
+commit f2da3d4edb49c9ccf9c81c748b8d19ec02ad8c7b
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 14:24:53 2023 +0000
+
+    auth done
+
+commit 44396572c579759539551a559e13e91fc7007c76
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 12:40:44 2023 +0000
+
+    Auth wortkin
+
+commit 8eebba758361ab238f264b817b3e460f71eed8ed
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 11:58:35 2023 +0000
+
+    auth service tried
+
+commit 60e33464803afb4427c597aad9e171d44e3d7f47
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 08:27:19 2023 +0000
+
+    added testData, removed tests and change user
+
+commit ace6fba4e41b28a841b5b4512ee11064ebeb7a9b
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 07:29:04 2023 +0000
+
+    annotations and realtion done
+
+commit 0ad03f00555eaa1a7a1fca454578308e0ea14ab3
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 07:18:36 2023 +0000
+
+    changed package name from zli -> zkb
+
+commit 377e2f7bc1bf934955b42cf734f576e37fba6388
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 07:16:03 2023 +0000
+
+    Drink -> Booking done
+
+commit dc5d73a616587d92184701f3c8d35e82336650cb
+Author: Gabriel Egli <mail@gabriel-egli.ch>
+Date:   Thu Jul 13 07:11:04 2023 +0000
+
+    initial commit
