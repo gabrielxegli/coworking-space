@@ -1,5 +1,6 @@
 package ch.zkb.m223.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,11 +19,11 @@ public class Request {
     @Schema(readOnly = false)
     private Long id;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     @Fetch(FetchMode.JOIN)
     private ApplicationUser user;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     @Fetch(FetchMode.JOIN)
     private Booking booking;
 

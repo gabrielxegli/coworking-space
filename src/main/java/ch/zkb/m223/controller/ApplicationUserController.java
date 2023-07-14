@@ -37,8 +37,8 @@ public class ApplicationUserController {
 
     @GET
     @Path("{id}")
-    public ApplicationUser get(@PathParam("id") Long id) {
-        return service.read(id);
+    public ApplicationUser get(@PathParam("id") int id) {
+        return service.read(Integer.toUnsignedLong(id));
     }
 
     @PUT
@@ -49,7 +49,7 @@ public class ApplicationUserController {
 
     @DELETE
     @Path("{id}")
-    public ApplicationUser delete(@PathParam("id") Long id) {
-        return service.delete(id);
+    public ApplicationUser delete(@PathParam("id") int id) {
+        return service.delete(Integer.toUnsignedLong(id));
     }
 }

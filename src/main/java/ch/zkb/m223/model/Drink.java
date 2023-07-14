@@ -2,6 +2,7 @@ package ch.zkb.m223.model;
 
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,7 @@ public class Drink {
     @Column(nullable = false)
     private boolean active;
 
-    @OneToMany(mappedBy = "drink")
+    @OneToMany(mappedBy = "drink", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("drink")
     @Fetch(FetchMode.JOIN)
     private Set<Booking> bookings;

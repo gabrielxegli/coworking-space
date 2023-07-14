@@ -43,7 +43,7 @@ public class RequestService {
     public Request delete(Long id) {
         Request request = em.find(Request.class, id);
 
-        em.remove(id);
+        em.remove(request);
 
         return request;
     }

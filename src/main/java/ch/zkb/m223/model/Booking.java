@@ -3,6 +3,7 @@ package ch.zkb.m223.model;
 import java.time.LocalDateTime;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,11 +31,11 @@ public class Booking {
     @Column(nullable = false)
     private boolean isHalfDay;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, cascade = CascadeType.ALL)
     @Fetch(FetchMode.JOIN)
     private Drink drink;
 
-    @OneToMany(mappedBy = "booking")
+    @OneToMany(mappedBy = "booking", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("booking")
     @Fetch(FetchMode.JOIN)
     private Set<Request> requests;

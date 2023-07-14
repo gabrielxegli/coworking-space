@@ -43,7 +43,7 @@ public class DrinkService {
     public Drink delete(Long id) {
         Drink drink = em.find(Drink.class, id);
 
-        em.remove(id);
+        em.remove(drink);
 
         return drink;
     }

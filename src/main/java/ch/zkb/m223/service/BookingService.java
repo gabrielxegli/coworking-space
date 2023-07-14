@@ -43,7 +43,7 @@ public class BookingService {
     public Booking delete(Long id) {
         Booking booking = em.find(Booking.class, id);
 
-        em.remove(id);
+        em.remove(booking);
 
         return booking;
     }

@@ -58,7 +58,7 @@ public class ApplicationUserService {
     public ApplicationUser delete(Long id) {
         ApplicationUser user = em.find(ApplicationUser.class, id);
 
-        em.remove(id);
+        em.remove(user);
 
         return user;
     }
