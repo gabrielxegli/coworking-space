@@ -32,7 +32,7 @@ Der Webservice ist über Port **8080** erreichbar. Alle Testfälle laufen über 
 
 Die automatisch eingeführten Testdaten werden in `TestDataService.java` gefunden.\
 Die Testfälle wurden mit [Postman](https://www.postman.com/) gemacht und man findet sie unter `/Coworking.postman_collection.json`
-Testfall Import Anleitung [Anleitung](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#:~:text=In%20Postman%2C%20select%20Import%20to,3.0%20with%20a%20Postman%20Collection.)
+Testfall Import [Anleitung](https://learning.postman.com/docs/getting-started/importing-and-exporting-data/#:~:text=In%20Postman%2C%20select%20Import%20to,3.0%20with%20a%20Postman%20Collection.)
 
 ## Quellen
 
